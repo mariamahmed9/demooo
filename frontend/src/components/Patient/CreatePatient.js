@@ -41,9 +41,9 @@ class CreatePatient extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire, ordonnances } = this.state;
+    const { id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire} = this.state;
 
-    axios.post('/patients', { id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire, ordonnances })
+    axios.post('/patients', { id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire})
       .then((result) => {
         this.props.history.push("/")
       });
