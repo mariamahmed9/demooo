@@ -12,8 +12,7 @@ class PatientListe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      patients: [],
-      ordonnances: []
+      patients: []
     };
   }
 
@@ -23,12 +22,7 @@ class PatientListe extends Component {
         this.setState({ patients: res.data });
         console.log(this.state.patients);
       });
-    axios.get('/ordonnances')
-      .then(res => {
-        this.setState({ ordonnances: res.data });
-        console.log(this.state.ordonnances);
-      });
-
+    
     const script = document.createElement("script");
 
     script.src = `js/content2.js`;
@@ -93,8 +87,8 @@ class PatientListe extends Component {
                               <td><Link to={`/show/${c.id}`}>{c.id}</Link></td>
                               <td><Link to={`/show/${c.id}`}>{c.nom}</Link></td>
                               <td>{c.prenom}</td>
-                              <td>{c.date}</td>
-                              <td>{c.lieu}</td>
+                              <td>{c.birth_date}</td>
+                              <td>{c.birth_place}</td>
 
                             </tr>
 
