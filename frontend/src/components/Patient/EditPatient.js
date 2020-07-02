@@ -33,9 +33,9 @@ class EditPatient extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { id, nom, prenom, sexe, groupe, date, lieu, nationalite, profession, assurance, ville, tel1, tel2, telw, email, medecin_r, medecin_t } = this.state.patient;
+    const { id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire } = this.state.patient;
 
-    axios.put('/patients/' + this.props.match.params.id, { id, nom, prenom, sexe, groupe, date, lieu, nationalite, profession, assurance, ville, tel1, tel2, telw, email, medecin_r, medecin_t })
+    axios.put('/patients/' + this.props.match.params.id, {id, nom, prenom, sexe, groupe_sanguin, birth_date, birth_place, nationalite, profession, adress_1, ville, tel1, tel2, whatapp, adress_2, contry, wire})
       .then((result) => {
         this.props.history.push("/show/" + this.props.match.params.id)
       });
@@ -107,11 +107,11 @@ class EditPatient extends Component {
                     <Form.Control as="select"
                       style={{ "width": "300px", "margin": "1px", "padding": "10px", "marginRight": "20px" }}
                       onChange={this.onChange}
-                      name="groupe" value={this.state.patient.groupe}
+                      name="groupe_sanguin" value={this.state.patient.groupe_sanguin}
                       className={" border bg-white text-dark"}>
-                      {/*  {this.state.groupes.map(groupe =>
-                            <option key={groupe.value} value={groupe.value}>
-                              {groupe.display}
+                      {/*  {this.state.groupe_sanguins.map(groupe_sanguin =>
+                            <option key={groupe_sanguin.value} value={groupe_sanguin.value}>
+                              {groupe_sanguin.display}
                             </option>
                           )}*/}
 
