@@ -10,9 +10,7 @@ import ShowPatient from './components/Patient/ShowPatient';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import Footerr from './components/Footerr';
-import AnalyseListe from './components/Analyse/AnalyseListe';
 import ConsultationList from './components/Consultation/ConsultationList';
-import Analyse from './components/Analyse/Analyse';
 import CreateConsultation from './components/Consultation/CreateConsultation';
 
 ReactDOM.render(
@@ -24,9 +22,7 @@ ReactDOM.render(
         <Route path='/edit/:id' component={EditPatient} />
         <Route path='/create' component={CreatePatient} />
         <Route path='/show/:id' component={ShowPatient} />
-        <Route path='/listana' component={AnalyseListe} />
         <Route path='/listcons' component={ConsultationList} />
-        <Route path='/createana' component={Analyse} />
         <Route path='/addcons' component={CreateConsultation} />
        
         
